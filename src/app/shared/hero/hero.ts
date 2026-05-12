@@ -73,6 +73,13 @@ import { Component } from '@angular/core';
     @media (max-width: 960px) {
       h1 { font-size: 44px; }
     }
+    @media (max-width: 600px) {
+      .m-hero { padding: 48px 0 32px; }
+      h1 { font-size: 32px; letter-spacing: -0.3px; }
+      .lead { font-size: 16px; }
+      .m-hero-ctas { flex-direction: column; width: 100%; }
+      .m-btn.large { width: 100%; justify-content: center; }
+    }
   `]
 })
 export class HeroComponent {}

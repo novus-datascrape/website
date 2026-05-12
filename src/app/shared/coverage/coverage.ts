@@ -70,6 +70,11 @@ import { Component } from '@angular/core';
     @media (max-width: 960px) {
       .m-coverage-grid { grid-template-columns: 1fr; gap: 40px; }
     }
+    @media (max-width: 600px) {
+      .m-section { padding: 64px 0; }
+      h2 { font-size: 28px; }
+      .v { font-size: 20px; }
+    }
   `]
 })
 export class CoverageComponent {

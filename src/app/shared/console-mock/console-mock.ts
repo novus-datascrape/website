@@ -164,6 +164,8 @@ import { Component } from '@angular/core';
     @media (max-width: 960px) {
       table { font-size: 12px; }
       .desc-cell { display: none; }
+      .frame-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .console { min-width: 700px; }
     }
   `]
 })

@@ -67,6 +67,12 @@ import { Component } from '@angular/core';
     @media (max-width: 960px) {
       .m-pillars { grid-template-columns: 1fr; gap: 32px; }
     }
+    @media (max-width: 600px) {
+      .m-section { padding: 64px 0; }
+      .m-section-head h2 { font-size: 28px; }
+      .m-pillar .num { font-size: 48px; }
+      .m-pillar .num .unit { font-size: 24px; }
+    }
   `]
 })
 export class PillarsComponent {

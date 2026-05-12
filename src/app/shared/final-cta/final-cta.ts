@@ -75,6 +75,14 @@ import { Component } from '@angular/core';
     .m-btn.ghost { background: var(--nds-surface); color: var(--nds-slate-800); border-color: var(--nds-line-strong); }
     .m-btn.ghost:hover { background: var(--nds-slate-50); border-color: var(--nds-slate-300); }
     .m-btn.large { padding: 16px 28px; font-size: 16px; }
+
+    @media (max-width: 600px) {
+      .m-section { padding: 64px 0; }
+      .m-final-cta { padding: 48px 20px; }
+      .m-final-cta h2 { font-size: 32px; }
+      .m-hero-ctas { flex-direction: column; width: 100%; }
+      .m-btn.large { width: 100%; justify-content: center; }
+    }
   `]
 })
 export class FinalCtaComponent {}

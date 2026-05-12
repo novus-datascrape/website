@@ -114,6 +114,14 @@ import { Component } from '@angular/core';
     @media (max-width: 960px) {
       .m-delivery { grid-template-columns: 1fr; gap: 32px; padding: 32px; }
     }
+    @media (max-width: 600px) {
+      .m-section { padding: 64px 0; }
+      .m-section-head h2 { font-size: 28px; }
+      .delivery-title { font-size: 28px; }
+      .m-delivery { padding: 24px; }
+      .methods { grid-template-columns: 1fr; }
+      .m-codeblock { font-size: 11px; padding: 16px; }
+    }
   `]
 })
 export class DeliveryComponent {

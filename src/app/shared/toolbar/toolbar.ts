@@ -13,16 +13,19 @@ import { Component } from '@angular/core';
           </svg>
           <span>Novus<span class="dot">·</span>Datascrape</span>
         </a>
-        <nav class="m-nav">
-          <a href="#product">Product</a>
-          <a href="#how-we-work">How we work</a>
-          <a href="#coverage">Coverage</a>
-          <a href="#delivery">Delivery</a>
-          <a href="#teams">For teams</a>
+        <nav class="m-nav" [class.open]="menuOpen">
+          <a href="#product" (click)="menuOpen = false">Product</a>
+          <a href="#how-we-work" (click)="menuOpen = false">How we work</a>
+          <a href="#coverage" (click)="menuOpen = false">Coverage</a>
+          <a href="#delivery" (click)="menuOpen = false">Delivery</a>
+          <a href="#teams" (click)="menuOpen = false">For teams</a>
         </nav>
         <div class="m-toolbar-spacer"></div>
         <a class="m-toolbar-secondary" href="https://console.interlinc.co.uk">Sign in</a>
-        <a class="m-toolbar-cta" href="#demo">Book a demo</a>
+        <a class="m-toolbar-cta desktop-only" href="#demo">Book a demo</a>
+        <button class="m-hamburger" (click)="menuOpen = !menuOpen" aria-label="Toggle menu">
+          <span class="material-icons">{{ menuOpen ? 'close' : 'menu' }}</span>
+        </button>
       </div>
     </header>
   `,
@@ -75,10 +78,36 @@ import { Component } from '@angular/core';
       cursor: pointer;
     }
     .m-toolbar-spacer { flex: 1; }
+    .m-hamburger {
+      display: none;
+      background: none; border: none; color: #fff;
+      cursor: pointer; padding: 4px;
+    }
+    .m-hamburger .material-icons { font-size: 28px; }
 
     @media (max-width: 960px) {
-      .m-nav { display: none; }
+      .m-nav {
+        display: none;
+        position: absolute;
+        top: 64px; left: 0; right: 0;
+        background: linear-gradient(180deg, #0277bd 0%, #0288d1 100%);
+        flex-direction: column;
+        padding: 16px 24px 24px;
+        gap: 0;
+        box-shadow: 0 8px 24px rgba(0,0,0,.2);
+      }
+      .m-nav.open { display: flex; }
+      .m-nav a {
+        padding: 14px 0;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255,255,255,.1);
+      }
+      .m-nav a:last-child { border-bottom: none; }
+      .m-hamburger { display: block; }
+      .desktop-only { display: none; }
     }
   `]
 })
-export class ToolbarComponent {}
+export class ToolbarComponent {
+  menuOpen = false;
+}
