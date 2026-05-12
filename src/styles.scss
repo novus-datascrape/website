@@ -1,13 +1,86 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+/* =========================================================================
+   Novus Datascrape — Color & Type Tokens
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+:root {
+  /* Page & surfaces */
+  --nds-page:           #f4f7f9;
+  --nds-surface:        #ffffff;
+  --nds-surface-alt:    #fafafa;
+
+  /* Sky-blue — primary accent */
+  --nds-primary-700:    #0277bd;
+  --nds-primary-600:    #0288d1;
+  --nds-primary-400:    #29b6f6;
+  --nds-primary-gradient: linear-gradient(90deg, #0288d1 0%, #29b6f6 100%);
+
+  /* Slate ramp */
+  --nds-slate-900:      #263238;
+  --nds-slate-800:      #37474f;
+  --nds-slate-700:      #455a64;
+  --nds-slate-600:      #546e7a;
+  --nds-slate-500:      #78909c;
+  --nds-slate-400:      #90a4ae;
+  --nds-slate-300:      #b0bec5;
+  --nds-slate-200:      #cfd8dc;
+  --nds-slate-100:      #eceff1;
+  --nds-slate-50:       #f5f5f5;
+
+  /* Lines */
+  --nds-line:           #f0f0f0;
+  --nds-line-strong:    #dadce0;
+
+  /* Semantic — status */
+  --nds-success-bg:     #e8f5e9;
+  --nds-success-fg:     #2e7d32;
+  --nds-success-border: #c8e6c9;
+  --nds-warn-bg:        #fff3e0;
+  --nds-warn-fg:        #ef6c00;
+  --nds-warn-border:    #ffe0b2;
+  --nds-neutral-bg:     #eceff1;
+  --nds-neutral-fg:     #546e7a;
+  --nds-neutral-border: #cfd8dc;
+
+  /* Shadow & Radius */
+  --nds-shadow-toolbar: 0 2px 4px rgba(0, 0, 0, 0.10);
+  --nds-shadow-chip:    0 1px 2px rgba(60, 64, 67, 0.10);
+  --nds-shadow-card:    0 4px 20px rgba(0, 0, 0, 0.05);
+
+  --nds-radius-chip:    4px;
+  --nds-radius-control: 6px;
+  --nds-radius-card:    12px;
+
+  /* Motion */
+  --nds-ease:           cubic-bezier(0.4, 0, 0.2, 1);
+  --nds-dur-fast:       150ms;
+  --nds-dur:            200ms;
+
+  /* Type */
+  --nds-font-sans: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  --nds-text-title:   500 22.4px/1.3 var(--nds-font-sans);
+  --nds-text-h3:      500 18px/1.4 var(--nds-font-sans);
+  --nds-text-lead:    400 17.6px/1.6 var(--nds-font-sans);
+  --nds-text-body:    400 14px/1.5 var(--nds-font-sans);
+  --nds-text-meta:    600 13.6px/1.4 var(--nds-font-sans);
+  --nds-text-cap:     600 13px/1.3 var(--nds-font-sans);
+
+  --nds-tr-cap:    0.5px;
+  --nds-tr-chip:   0.3px;
+  --nds-tr-source: 0.2px;
+  --nds-tr-logo:   0.5px;
 }
 
+*, *::before, *::after { box-sizing: border-box; }
 html, body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--nds-page);
+  font-family: var(--nds-font-sans);
+  color: var(--nds-slate-800);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
